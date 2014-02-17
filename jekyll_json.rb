@@ -8,7 +8,7 @@ module Jekyll
         end
         def render(context)
             data = context['page'][@key]
-            hash_to_jsonify = context.registers[:site].config[@key]
+            hash_to_jsonify = Jekyll.configuration({})[@key]
             # this isn't a sophisticated merge. if there are nested
             # hashes, it'll completely overwrite them (so if you have
             # deeply nested settings in _config.yml that aren't replicated
